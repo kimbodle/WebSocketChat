@@ -1,0 +1,200 @@
+/* ----------------------------
+   전역 스타일 & 초기화
+---------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  /* --------------------
+   로그인 섹션
+-------------------- */
+.login-section {
+    max-width: 400px;
+    margin: 50px auto; 
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+  }
+  
+  #loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #loginForm input[type="text"],
+  #loginForm input[type="password"] {
+    margin-bottom: 20px; 
+    padding: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    font-size: 16px;
+  }
+  
+  #loginForm button[type="submit"] {
+    padding: 15px;
+    border: none; 
+    border-radius: 5px; 
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFCF80;
+    color: #fff; 
+    cursor: pointer; 
+  }
+  
+  #loginForm button[type="submit"]:hover {
+    background-color: #c28257;
+  }
+  
+  /* ----------------------------
+     헤더 스타일
+  ---------------------------- */
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+  }
+  header h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* ----------------------------
+     메인 컨텐츠 래퍼
+  ---------------------------- */
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* 채팅 섹션과 이미지 열 사이 간격 */
+    max-width: 1200px;
+    margin: 20px auto; /* 가운데 정렬 */
+    padding: 0 20px;
+  }
+  
+  /* ----------------------------
+     채팅 섹션
+  ---------------------------- */
+  .chat-section {
+    flex: 1; /* 남는 공간을 넉넉히 차지 */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* 채팅 메시지 목록 */
+  .chat-messages {
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto; /* 스크롤 가능 */
+    margin-bottom: 20px;
+  }
+  .chat-messages li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+    word-wrap: break-word; /* 긴 단어 줄바꿈 */
+  }
+  
+  /* 메시지 입력 영역 */
+  .message-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .message-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .message-input input[type="text"]:focus {
+    border-color: #666;
+  }
+  
+  /* 버튼 공통 스타일 */
+  button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  button:hover {
+    background-color: #555;
+  }
+  
+  /* 드롭박스: 이미지 업로드/갤러리 아이콘 영역 */
+  .dropbox {
+    width: 40px;
+    height: 40px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .dropbox img {
+    max-width: 30px;
+    max-height: 30px;
+  }
+  .dropbox:hover {
+    background-color: #e4e4e4;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ----------------------------
+     이미지 열
+  ---------------------------- */
+  .image-column {
+    flex: 0 0 120px; /* 고정 너비 (조정 가능) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .image-column img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .image-column img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ----------------------------
+     반응형 디자인
+  ---------------------------- */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      padding: 0 10px;
+    }
+  
+    .image-column {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .image-column img {
+      margin: 10px;
+    }
+  }
+  
